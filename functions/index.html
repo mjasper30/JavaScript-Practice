@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+  </head>
+  <body>
+    <script>
+      addTwoNumbers(2, 2);
+      helloWorld();
+
+      function addTwoNumbers(firstNumber, secondNumber) {
+        return console.log(firstNumber + secondNumber);
+      }
+
+      function helloWorld() {
+        console.log("Hello World");
+      }
+
+      function toCelcius(fahrenheit) {
+        return (5 / 9) * (fahrenheit - 32);
+      }
+
+      let fahrenheitValue_asFunctionResult = toCelcius(55);
+      let fahrenheitValue_asFunctionObject = toCelcius;
+      console.log(fahrenheitValue_asFunctionResult);
+      console.log(fahrenheitValue_asFunctionObject);
+
+      let text =
+        "The temperature is " + fahrenheitValue_asFunctionResult + " Celcius";
+
+      console.log(text);
+    </script>
+  </body>
+</html>
