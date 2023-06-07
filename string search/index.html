@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Search</title>
+  </head>
+  <body>
+    <h1>String Search</h1>
+    <p>Check console from the website to see the results</p>
+
+    <script>
+      let text = "This is a team. Apostasia team is good";
+      let text1 = "The rain in SPAIN stays mainly in the plain";
+      let text2 =
+        "I love cats. Cats are very easy to love. Cats are very popular.";
+
+      //INDEX OF -> search for that text from the first occurence then check the index of that text
+      //The indexOf() method returns the index (position) the first occurrence of a string in a string
+      console.log(text.indexOf("team")); //OUTPUT: 10
+
+      //LASTINDEXOF -> search for that text from the last occurence then check the index of that text
+      //The indexOf() method returns the index (position) the first occurrence of a string in a string
+      console.log(text.lastIndexOf("team")); //OUPUT: 26
+
+      //The indexOf() method returns the index (position) the first occurrence of a string in a string
+      console.log(text.indexOf("Jasper")); //OUTPUT: -1... it will return -1 if there is not found in the text
+
+      //Both methods accept a second parameter as the starting position for the search:
+      console.log(text.indexOf("is", 7)); //OUTPUT: 31
+
+      //SEARCH -> search of this text then return the specific index of that text
+      console.log(text.search("Apostasia")); //OUTPUT: 16
+
+      //MATCH -> check if there is a match then it will return an array of that
+      console.log(text1.match("ain")); //OUTPUT: ['ain', index: 5, input: 'The rain in SPAIN stays mainly in the plain', groups: undefined]
+
+      console.log(text1.match(/ain/)); //OUTPUT: ['ain', index: 5, input: 'The rain in SPAIN stays mainly in the plain', groups: undefined]
+
+      console.log(text1.match(/ain/g)); //OUTPUT: (3) ['ain', 'ain', 'ain']
+
+      console.log(text1.match(/ain/gi)); //OUTPUT: (4) ['ain', 'AIN', 'ain', 'ain']
+
+      //MATCH ALL
+      const iterator = text2.matchAll("Cats");
+
+      console.log(iterator); //OUTPUT: RegExpStringIterator {}
+      console.log(Array.from(iterator)); //OUTPUT: (2) [Array(1), Array(1)]
+      console.log(Array.from(iterator).length); //OUTPUT: 2
+
+      //INCLUDES -> returns true if found otherwise false, can also specify the index of search on the second parameter
+      console.log(text.includes("Apostasia")); //OUTPUT: true
+
+      //STARTSWITH -> returns true if the string begins within the specified value, can also specify the index of search on the second parameter
+      console.log(text.startsWith("This")); //OUTPUT: true
+      console.log(text.startsWith("Apostasia")); //OUTPUT: false
+
+      //ENDSWITH -> returns true if the string ends within the specified value, can also specify the index of search on the second parameter
+      console.log(text.endsWith("good")); //OUTPUT: true
+      console.log(text.endsWith("Apostasia")); //OUTPUT: false
+    </script>
+  </body>
+</html>
