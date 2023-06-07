@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strings</title>
+  </head>
+  <body>
+    <p id="message"></p>
+    <p id="formFeed"></p>
+    <p id="stringAndObject"></p>
+    <script>
+      let firstName = "Jasper";
+      let lastName = "Macaraeg";
+      let quote = "'I am stronger than my problems'";
+      let exampleFormFeed = "This is a form feed \f";
+
+      document.getElementById("message").innerHTML =
+        firstName + " " + lastName + "<br>" + "<i>" + quote + "</i>";
+
+      document.getElementById("formFeed").innerText = exampleFormFeed;
+
+      console.log("Number of \n characters\r of the quote " + quote.length);
+
+      //   Escape Characters
+      console.log('This is a \t backslash " \\ "');
+
+      //String as an Object
+      let x = "This is a ";
+      let y = new String("This is an ");
+
+      document.getElementById("stringAndObject").innerHTML =
+        x + " " + typeof x + "<br>" + y + " " + typeof y;
+
+      console.log(x == y); //comparing two objects in javascript it always return false
+      console.log(x === y);
+    </script>
+  </body>
+</html>
