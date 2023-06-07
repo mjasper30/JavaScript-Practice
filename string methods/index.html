@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Methods</title>
+  </head>
+  <body>
+    <h1>Strings Methods</h1>
+    <p>Check the console for the results</p>
+    <script>
+      let text = "This is just a text";
+      let names = "Jasper, Ira, Jarrett";
+      let message =
+        "Hello Jasper welcome to Javascript training. Jasper Pogi lets go";
+      let voteCatOrDog = "I love dogs";
+      //Strings Methods
+
+      //------------------------------length
+
+      //  length - to get the number of characters within the String it also counts the space
+      console.log(text.length); //OUTPUT: 19 ... There are 19 characters
+
+      //-------------------------------slice
+
+      //slice(start, end) - extracts a part of a string and returns the extracted part in a new string.
+      console.log(names.slice(8, 11)); //OUTPUT: Ira ... The counting starts from 1 to something from the left if positive
+      console.log(names.slice(8)); //OUTPUT: Ira, Jarrett ... The counting starts from 1 to something from the left if positive
+
+      console.log(names.slice(-7)); //OUTPUT: Jarrett .. The counting starts from 1 to something from the right side if negative
+      console.log(names.slice(-12, -9)); //OUTPUT: Ira .. The counting starts from 1 to something from the right side if negative
+
+      //-------------------------------substring
+
+      //substr(start, end) - The difference is that start and end values less than 0 are treated as 0 in substring().
+      console.log(names.substring(-31213131, 6)); //OUTPUT: Jasper .. The countings starts from 1. Any number is less than 0 from the parameter it will be always 0.
+
+      //-------------------------------substr
+
+      //substr(start, length) - The difference is that the second parameter specifies the length of the extracted part.
+      console.log(names.substr(8, 3)); //OUTPUT: Ira... The countring starts from 1. Then the length of characters to the right then it will return the string
+
+      //--------------------------------replace
+
+      //By default, the replace() method replaces only the first match:
+      console.log(names.replace("Jasper", "Faker"));
+
+      //To replace case insensitive, use a regular expression with an /i flag (insensitive):
+      console.log(names.replace(/JaSpER/i, "Zoe"));
+
+      //To replace all matches, use a regular expression with a /g flag (global match):
+      console.log(message.replace(/Jasper/g, "Faker"));
+
+      //In 2021, JavaScript introduced the string method replaceAll():
+      console.log(voteCatOrDog.replaceAll("dogs", "cats"));
+
+      //------------------------------toUpperCase
+      console.log("di ako galet".toUpperCase());
+
+      //------------------------------toLowerCase
+      console.log("Bring ME To LOwerCaSE".toLowerCase());
+
+      //------------------------------concat
+      console.log("Hello".concat(" ", "World", ". My Name is Jasper Macaraeg"));
+
+      //------------------------------trim, trimStart, trimEnd
+      console.log(
+        "             Just a message with whitespaces on start and end of this messsage               ".trim()
+      );
+      console.log(
+        "          Trims just from the            start of this text".trimStart()
+      );
+      console.log(
+        "          Trims just from the end of this text              ".trimEnd()
+      );
+
+      //------------------------------padStart, padEnd
+      //The charAt() method returns the character at a specified index (position) in a string:
+      console.log("mjasper" + "".padStart(2, "30")); //OUTPUT: mjasper30
+      console.log("Contact Number: " + "09".padEnd(11, "x")); //Contact Number: 09xxxxxxxxx
+
+      //------------------------------charAt
+      console.log(message.charAt(0)); //OUTPUT: H
+
+      //The charCodeAt() method returns the unicode of the character at a specified index in a string:
+      // The method returns a UTF-16 code (an integer between 0 and 65535).
+      console.log(message.charCodeAt(0)); //OUTPUT: 72
+      console.log(message[1]); //OUTPUT: e
+
+      //------------------------------split - turns string into an array
+      console.log("Hello my name is Jasper Macaraeg".split(" "));
+
+      //If the separator is omitted, the returned array will contain the whole string in index [0].
+      // If the separator is "", the returned array will be an array of single characters:
+      console.log("Hello my name is Jasper Macaraeg".split(""));
+    </script>
+  </body>
+</html>
