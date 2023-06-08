@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Console Object Methods</title>
+  </head>
+  <body>
+    <script>
+      //console.object
+      console.table([
+        {
+          firstName: "Jasper",
+          lastName: "Macaraeg",
+          age: 21,
+        },
+        {
+          firstName: "Ira",
+          lastName: "Magbanua",
+          age: 21,
+        },
+      ]);
+
+      //   console.clear(); -> use to clear the console
+
+      // .error() -> use to display an error message like in red indicator
+      console.error("This is an error)");
+
+      // .info() -> use to display info message has a logo info
+      console.info("This is an info");
+
+      // .assert() -> writes an error message to console if the assertion is false
+      let success = false;
+      console.assert(success, "Failed to load 😢");
+
+      // .warn() -> outputs a warning message to the browsers console
+      console.warn("This is a warning!");
+    </script>
+  </body>
+</html>

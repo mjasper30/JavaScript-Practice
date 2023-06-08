@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta http-equiv="refresh" content="3" /> You can add refresh load -->
+    <title>String Templates</title>
+  </head>
+  <body>
+    <h1>String Templates</h1>
+
+    <h2>Template Literals</h2>
+    <p id="stringTemplates"></p>
+
+    <h2>Interpolation</h2>
+    <p id="interpolation"></p>
+    <p id="interpolationNumbers"></p>
+
+    <script>
+      //Template Literals
+      document.getElementById("stringTemplates").innerHTML = `Hello World`;
+      document.getElementById(
+        "stringTemplates"
+      ).innerHTML = `Hello "double quotes" and 'single quotes'`;
+
+      //Interpolation
+      const firstName = "Jasper";
+      document.getElementById("interpolation").innerHTML = `Hello ${firstName}`;
+
+      let price = 10;
+      let VAT = 0.25;
+
+      let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+      document.getElementById("interpolationNumbers").innerHTML = total;
+    </script>
+  </body>
+</html>
