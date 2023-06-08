@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numbers</title>
+  </head>
+  <body>
+    <h1>Infinity</h1>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+      let firstNumber = 1;
+      let secondNumber = 1.25;
+
+      let fakeNumber = "3";
+      let fakeNumberTwo = "100";
+
+      let scientificNumber = 1.45e6; //add zero starting from the decimal
+
+      let x = 999999999999999; // x will be 999999999999999
+      let y = 9999999999999999; // y will be 10000000000000000
+
+      console.log(firstNumber); //OUTPUT: 1
+      console.log(firstNumber + secondNumber); //OUTPUT: 2.25
+      console.log(firstNumber + fakeNumber); //OUTPUTl: 13 ... it is a string now
+      console.log(fakeNumber + secondNumber); //OUTPUT: 31.25
+      console.log(scientificNumber); //OUTPUT: 1.450000
+      console.log(x); //OUTPUT: 999999999999999
+      console.log(y); //OUTPUT: 10000000000000000
+
+      let solveProblem = (0.2 * 10 + 0.1 * 10) / 10;
+      console.log(solveProblem); //OUTPUT: 0.3
+
+      console.log(firstNumber * fakeNumber); //OUTPUT: 3
+      console.log(fakeNumber / firstNumber); //OUTPUT: 3
+      console.log(fakeNumber - firstNumber); //OUTPUT: 2
+      console.log(fakeNumber + fakeNumberTwo); //OUTPUT: 3100
+      console.log(fakeNumberTwo - fakeNumber); //OUTPUT: 97
+
+      //NaN -> Not a Number
+      let string = "String";
+
+      let notANumber = string / firstNumber;
+      console.log(notANumber); //OUtPUT: NaN
+      console.log(isNaN(notANumber)); //OUtPUT: true
+      console.log(firstNumber + NaN); //OUTPUT: NaN
+      console.log(fakeNumber + NaN); //OUTPUT: 3NaN
+      console.log(typeof NaN); //OUTPUT: number
+
+      //Infinity
+      let myNumber = 2;
+      let txt = "";
+      while (myNumber != Infinity) {
+        myNumber = myNumber * myNumber;
+        txt = txt + myNumber + "<br>";
+      }
+      document.getElementById("demo").innerHTML = txt;
+
+      console.log(2 / 0); //OUTPUT: Infinity
+      console.log(-2 / 0); //OUTPUT: -Infinity
+      console.log(typeof Infinity); //OUTPUT: number
+
+      //Hexadecimal
+      console.log(0xff); //OUTPUT: 255
+
+      let myNumber1 = 32;
+      document.getElementById("demo1").innerHTML =
+        "Decimal 32 = " +
+        "<br><br>" +
+        "Hexatrigesimal (base 36): " +
+        myNumber.toString(36) +
+        "<br>" +
+        "Duotrigesimal (base 32): " +
+        myNumber.toString(32) +
+        "<br>" +
+        "Hexadecimal (base 16): " +
+        myNumber.toString(16) +
+        "<br>" +
+        "Duodecimal (base 12): " +
+        myNumber.toString(12) +
+        "<br>" +
+        "Decimal (base 10): " +
+        myNumber.toString(10) +
+        "<br>" +
+        "Octal (base 8): " +
+        myNumber.toString(8) +
+        "<br>" +
+        "Binary (base 2): " +
+        myNumber.toString(2);
+
+      //JavaScript Numbers as an Object
+      let objectNumber = new Number(123);
+      let objectNumber1 = new Number(123);
+      let pureNumber = 123;
+
+      //Comparing number and an object
+      console.log(objectNumber == pureNumber); //OUPUT: true;
+      console.log(objectNumber === pureNumber); //OUPUT: false;
+
+      //Comparing two number objects
+      console.log(objectNumber == objectNumber1); //OUTPUT:  false
+      console.log(objectNumber === objectNumber1); //OUTPUT:  false
+    </script>
+  </body>
+</html>
