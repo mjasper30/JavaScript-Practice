@@ -16,6 +16,7 @@
     <h2>Interpolation</h2>
     <p id="interpolation"></p>
     <p id="interpolationNumbers"></p>
+    <p id="interpolationArrays"></p>
 
     <script>
       //Template Literals
@@ -33,6 +34,17 @@
 
       let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
       document.getElementById("interpolationNumbers").innerHTML = total;
+
+      let frontEnd = "Front-end Basics";
+      const frontEndBasics = ["HTML", "CSS", "JavaScript"];
+
+      let message = `<h1>${frontEnd}</h1><ul>`;
+      for (const x of frontEndBasics) {
+        message += `<li>${x}</li>`;
+      }
+      message += `</ul>`;
+
+      document.getElementById("interpolationArrays").innerHTML = message;
     </script>
   </body>
 </html>
