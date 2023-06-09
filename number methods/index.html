@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Methods</title>
+  </head>
+  <body>
+    <script>
+      let number = 123;
+      let x = 9.656;
+
+      //toString()
+      console.log(number.toString()); //OUTPUT: 123 as a String
+      console.log((123).toString()); //OUTPUT: 123 as a String
+      console.log((2 + 2).toString()); //OUTPUT: 4 as a String
+
+      //toExponential()
+      console.log(x.toExponential(2)); //OUTPUT: 9.66e+0
+      console.log(x.toExponential(4)); //OUTPUT: 9.6560e+0
+      console.log(x.toExponential(6)); //OUTPUT: 9.656000e+0
+
+      //toFixed()
+      console.log(x.toFixed(0)); //OUTPUT: 10
+      console.log(x.toFixed(2)); //OUTPUT: 9.66
+      console.log(x.toFixed(4)); //OUTPUT: 9.6560
+      console.log(x.toFixed(6)); ////OUTPUT: 9.656000
+
+      //toPrecision()
+      console.log(x.toPrecision()); //OUTPUT: 9.656
+      console.log(x.toPrecision(2)); //OUTPUT: 9.7
+      console.log(x.toPrecision(4)); //OUTPUT: 9.656
+      console.log(x.toPrecision(6)); ////OUTPUT: 9.65600
+
+      //valueOf()
+      console.log(number.valueOf()); //OUTPUT: 123 as a Number
+
+      //Number()
+      console.log(Number(true));
+      console.log(Number(false));
+      console.log(Number("10"));
+      console.log(Number("  10"));
+      console.log(Number(" 10  "));
+      console.log(Number("10.33"));
+      console.log(Number("10,33"));
+      console.log(Number("10 33"));
+      console.log(Number("John"));
+
+      //The Date() method returns the number of milliseconds
+      console.log(Number(new Date()));
+
+      //parseInt()
+      console.log(parseInt("-10"));
+      console.log(parseInt("-10.33"));
+      console.log(parseInt("10"));
+      console.log(parseInt("10.33"));
+      console.log(parseInt("10 20 30"));
+      console.log(parseInt("10 years"));
+      console.log(parseInt("years 10"));
+
+      //parseFloat()
+      console.log(parseFloat("10"));
+      console.log(parseFloat("10.33"));
+      console.log(parseFloat("10 20 30"));
+      console.log(parseFloat("10 20 30"));
+      console.log(parseFloat("10 years"));
+      console.log(parseFloat("years 10"));
+    </script>
+  </body>
+</html>
