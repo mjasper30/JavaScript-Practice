@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Big Int</title>
+  </head>
+  <body>
+    <script>
+      let x = 13;
+      let y = 9007199254740991;
+      let z = -9007199254740991;
+
+      let a = 123456789012345678901234567890n;
+      let b = BigInt("123456789012345678901234567890");
+      let c = 5n;
+
+      console.log(x);
+      console.log(y);
+      console.log(z);
+
+      console.log(a);
+      console.log(b);
+
+      console.log(typeof b);
+
+      console.log(a * b);
+
+      // let x = 5n;
+      // let y = x / 2;
+      // // Error: Cannot mix BigInt and other types, use explicit conversion.
+      console.log(Number(c) / 5);
+
+      //9007199254740992 === 9007199254740993; // is true !!!
+
+      let knowMaxSafeInt = Number.MAX_SAFE_INTEGER;
+      let knowMinSafeInt = Number.MIN_SAFE_INTEGER;
+      console.log(knowMaxSafeInt);
+      console.log(knowMinSafeInt);
+
+      console.log(Number.isInteger(10)); //OUTPUT: true
+      console.log(Number.isInteger(10.5)); //OUTPUT: false
+
+      console.log(Number.isSafeInteger(10)); //OUTPUT: true
+      console.log(Number.isSafeInteger(12345678901234567890));
+    </script>
+  </body>
+</html>
