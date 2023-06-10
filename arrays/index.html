@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+  </head>
+  <body>
+    <h1>Arrays</h1>
+    <p>Check console to see the output</p>
+    <hr />
+    <div id="result"></div>
+    <hr />
+    <div id="lolCharactersResult"></div>
+    <hr />
+    <h1>Associative Arrays</h1>
+    <p id="demo"></p>
+    <script>
+      //When creating an array in JS always use const
+
+      //This is what we called an array literal
+      const names = ["Jasper", "Ira", "Zoe", "Soraka"];
+      const course = ["BSCS", "BSIT", "BSEMC", "BSIS"];
+
+      //We can create an empty array then add some values based on the index
+      const grades = [];
+      grades[0] = 1.0;
+      grades[1] = 1.25;
+      grades[2] = 1.5;
+      grades[3] = 1.75;
+      grades[4] = 2.0;
+      grades[5] = 3.0;
+      grades[6] = 5.0;
+
+      //We can also create an array using new Array()
+      const subjects = new Array("Calculus", "English", "Science");
+
+      //To access values from the array
+      console.log(names[0]); //OUTPUT: Jasper
+      console.log(names[6]); //OUTPUT: undefined
+
+      //To modify the value inside array
+      names[0] = "Poppy";
+      console.log(names[0]); //OUTPUT: Poppy
+
+      console.log("Your grade is " + grades[0].toFixed(2)); //OUTPUT: 1.00
+
+      console.log(subjects[0]); //OUTPUT: Calculus
+
+      //We can also store it from a variable per index
+      let subject = subjects[2];
+      console.log(subject); //OUTPUT: Science
+
+      //Converting an array to string
+      console.log(subjects.toString());
+
+      //Access the full array
+      console.log(subjects);
+
+      //Arrays are Objects
+
+      //typeof Array
+      console.log(typeof grades);
+
+      let array = ["John", "Doe", 46];
+      console.log(typeof array[1]);
+
+      //Array Elements Can Be Objects
+      let myArrays = [];
+      myArrays[0] = new Date();
+      myArrays[1] = sayHello;
+
+      function sayHello() {
+        console.log("Hello");
+      }
+
+      console.log(myArrays[0]);
+      console.log(myArrays[1]);
+
+      //length - use to return number of elements from an array
+      console.log(subjects.length);
+      //sort = use to sort elements inside an array
+      console.log(names.sort());
+
+      //Accessing the First Array Element
+      console.log(names[0]);
+
+      //Accessing the Last Array Element
+      console.log(names[names.length - 1]); //3 - 1 = 2... so the last index is 2 that is why it is zoe since we also sort it
+
+      //Looping inside an array
+      const fruits = ["Apple", "Orange", "Mango", "Pineapple", "Banana"];
+      const numberOfFruits = fruits.length;
+
+      let output = `<h1>List of Fruits</h1><ul>`;
+      for (let index = 0; index < numberOfFruits; index++) {
+        output += `<li>${fruits[index]}</li>`;
+      }
+      output += `</ul>`;
+
+      document.getElementById("result").innerHTML = output;
+
+      //Looping inside an array using forEach Loop
+      const lolCharacters = ["Zoe", "Soraka", "Yuumi", "Zed", "Yasuo", "Yone"];
+
+      let text = "<h1>List of League of Legends Champions</h1><ul>";
+      lolCharacters.forEach(myFunction);
+      text += "</ul>";
+
+      function myFunction(value) {
+        text += "<li>" + value + "</li>";
+      }
+
+      document.getElementById("lolCharactersResult").innerHTML = text;
+
+      //Adding Element in an Array using push
+      lolCharacters.push("Miss Fortune");
+      lolCharacters.push("Ahri");
+      console.log(lolCharacters[lolCharacters.length - 1]);
+      lolCharacters.sort();
+      console.log(lolCharacters.toString());
+
+      //Associative Arrays
+      const person = [];
+      person["firstName"] = "John";
+      person["lastName"] = "Doe";
+      person["age"] = 46;
+      document.getElementById("demo").innerHTML =
+        person[0] + " " + person.length;
+
+      //JavaScript new Array()
+      //   const points = new Array();
+      //   const points1 = [];
+      //NOTE: This are both the same but it is more safer to use [] than the new Array()
+
+      const points = new Array(40, 100, 1, 5, 25, 10);
+      const points1 = [40, 100, 1, 5, 25, 10];
+
+      const test = new Array(1);
+      console.log(test[0]); //OUTPUT: undefine if you use new Array() and the array has only one element
+
+      //The typeof operator returns object because a JavaScript array is an object.
+      console.log(typeof test); //OUTPUT: object
+
+      //To solve this problem ECMAScript 5 (JavaScript 2009) defined a new method Array.isArray():
+      console.log(Array.isArray(test)); //OUTPUT: true
+
+      //The instanceof operator returns true if an object is created by a given constructor:
+      console.log(test instanceof Array); //OUTPUT: true
+
+      /*
+        The Difference Between Arrays and Objects
+
+        In JavaScript, arrays use numbered indexes.  
+        In JavaScript, objects use named indexes.
+
+        Arrays are a special kind of objects, with numbered indexes.
+
+        ---------------------------------------------------------------------
+
+        When to Use Arrays. When to use Objects.
+
+        JavaScript does not support associative arrays.
+        You should use OBJECTS when you want the element names to be strings (text).
+        You should use ARRAYS when you want the element names to be numbers.
+        */
+    </script>
+  </body>
+</html>
