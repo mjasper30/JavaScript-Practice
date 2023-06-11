@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Methods</title>
+  </head>
+  <body>
+    <h1>Array Methods</h1>
+    <p>Check console to see the output</p>
+    <script>
+      const names = ["Jasper", "Ira", "Zoe", "Soraka"];
+
+      //length - property returns the length (size) of an array
+      console.log(names.length); //OUTPUT: 4
+
+      //toString() - converts an array to a string of (comma separated) array values.
+      console.log(names.toString()); //OUTPUT: Jasper,Ira,Zoe,Soraka
+
+      //join() - method also joins all array elements into a string.
+      console.log(names.join(" * ")); //OUTPUT: Jasper * Ira * Zoe * Soraka
+
+      //-----------------New Array--------------------
+
+      const fruits = ["Orange", "Apple", "Mango", "Banana"];
+
+      //push() - method adds a new element to an array (at the end)
+      let newFruitsLength = fruits.push("Grapes");
+      console.log(newFruitsLength); //OUTPUT: 5
+
+      //push() - method returns the new array length:
+      fruits.push("Strawberry");
+      console.log(fruits.toString()); //OUTPUT: Orange,Apple,Mango,Banana,Grapes,Strawberry
+
+      //pop() -  method removes the last element from an array
+      fruits.pop();
+      console.log(fruits.toString()); //OUTPUT: Orange,Apple,Mango,Banana,Grapes
+
+      //pop() - method returns the value that was "popped out"
+      let poppedFruit = fruits.pop();
+      console.log(poppedFruit); //OUTPUT: Grapes
+
+      //shift() - method removes the first array element and "shifts" all other elements to a lower index.
+      fruits.shift();
+      console.log(fruits.toString()); //OUTPUT: Apple,Mango,Banana
+
+      //shift() - method returns the value that was "shifted out"
+      let shiftFruit = fruits.shift();
+      console.log(fruits.toString()); //OUTPUT: Mango,Banana
+
+      //unshift() - method adds a new element to an array (at the beginning), and "unshifts" older elements:
+      fruits.unshift("Lemon");
+      console.log(fruits.toString()); //OUTPUT: Lemon,Apple,Mango,Banana
+
+      //unshift() - method returns the new array length:
+      let unshiftFruit = fruits.unshift("Grapes");
+      console.log(unshiftFruit); //OUTPUT: 5
+
+      //delete
+      delete fruits[0];
+      console.log(fruits); //OUTPUT: (5) [empty, 'Lemon', 'Apple', 'Mango', 'Banana']
+
+      //Merging (Concatinating) Arrays
+      console.log(names.concat(fruits).toString()); //OUTPUT: Jasper,Ira,Zoe,Soraka,,Lemon,Mango,Banana
+      console.log(names.concat("James").toString()); //OUTPUT: Jasper,Ira,Zoe,Soraka,James
+
+      //flat() - method creates a new array with sub-array elements concatenated to a specified depth.
+      const array = [
+        [1, 2],
+        [3, 4],
+        [5, 6],
+      ];
+
+      console.log(array.flat().toString()); //OUTPUT: 1,2,3,4,5,6
+
+      //splice() - method can be used to add new items to an array:
+      const color = ["Blue", "Green", "Yellow"];
+      color.splice(2, 0, "White", "Black");
+      /*
+        The first parameter (2) defines the position where new elements should be added (spliced in).
+        The second parameter (0) defines how many elements should be removed.
+        The rest of the parameters ("White" , "Black") define the new elements to be added.
+      */
+
+      console.log(color.toString()); //OUTPUT: Blue,Green,White,Black,Yellow
+
+      //With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array:
+      color.splice(0, 1);
+      console.log(color.toString()); //OUTPUT: Green,White,Black,Yellow
+
+      //slice() - method slices out a piece of an array into a new array.
+      console.log(color.slice(1)); //OUTPUT: White,Black,Yellow
+
+      console.log(names.slice(1, 4)); //OUTPUT: Ira, Zoe, Soraka
+    </script>
+  </body>
+</html>

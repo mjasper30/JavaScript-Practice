@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Sort</title>
+  </head>
+  <body>
+    <h1>Array Sort</h1>
+
+    <h2>Array Strings Sort</h2>
+    <p id="defaultArrayNames"></p>
+    <p id="arrayNames"></p>
+    <button onclick="resetNames()">Reset</button>
+    <button onclick="sortNames()">Sort</button>
+    <button onclick="reverseNames()">Reverse</button>
+
+    <hr />
+
+    <h2>Array Numbers Sort</h2>
+    <p id="defaultArrayNumbers"></p>
+    <p id="arrayNumbers"></p>
+    <button onclick="resetNumbers()">Reset</button>
+    <button onclick="sortNumbers()">Sort Numerically</button>
+    <button onclick="reverseNumbers()">Sort Numerically Reverse</button>
+
+    <script>
+      const names = ["Soraka", "Jasper", "Ira", "Zoe"];
+
+      document.getElementById("defaultArrayNames").innerHTML =
+        "Default Array: " + names.toString();
+      document.getElementById("arrayNames").innerHTML = names.toString();
+
+      function resetNames() {
+        const names = ["Soraka", "Jasper", "Ira", "Zoe"];
+
+        document.getElementById("arrayNames").innerHTML = names.toString();
+      }
+
+      function sortNames() {
+        document.getElementById("arrayNames").innerHTML = names
+          .sort()
+          .toString();
+      }
+
+      function reverseNames() {
+        document.getElementById("arrayNames").innerHTML = names
+          .sort()
+          .reverse()
+          .toString();
+      }
+
+      const numbers = [40, 100, 1, 5, 25, 10];
+
+      document.getElementById("defaultArrayNumbers").innerHTML =
+        "Default Array: " + numbers.toString();
+
+      document.getElementById("arrayNumbers").innerHTML = numbers.toString();
+
+      function resetNumbers() {
+        const numbers = [40, 100, 1, 5, 25, 10];
+        document.getElementById("arrayNumbers").innerHTML = numbers.toString();
+      }
+
+      function sortNumbers() {
+        document.getElementById("arrayNumbers").innerHTML = numbers.sort(
+          function (a, b) {
+            return a - b;
+          }
+        );
+      }
+
+      function reverseNumbers() {
+        document.getElementById("arrayNumbers").innerHTML = numbers.sort(
+          function (a, b) {
+            return b - a;
+          }
+        );
+      }
+    </script>
+  </body>
+</html>
