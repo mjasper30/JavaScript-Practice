@@ -22,8 +22,62 @@
     <hr />
     <h2>Array filter()</h2>
     <p id="filterNumbers"></p>
+
+    <hr />
+    <h2>Array reduce()</h2>
+    <p id="reduceNumbers"></p>
+
+    <hr />
+    <h2>Array reduceRight()</h2>
+    <p id="reduceNumbersRight"></p>
+
+    <hr />
+    <h2>Array every()</h2>
+    <p id="everyNumber"></p>
+
+    <hr />
+    <h2>Array some()</h2>
+    <p id="someNumber"></p>
+
+    <hr />
+    <h2>Array indexOf()</h2>
+    <p id="indexOfNumber"></p>
+
+    <hr />
+    <h2>Array lastIndexOf()</h2>
+    <p id="lastIndexOfNumber"></p>
+
+    <hr />
+    <h2>Array find()</h2>
+    <p id="findNumber"></p>
+
+    <hr />
+    <h2>Array find()</h2>
+    <p id="findIndexNumber"></p>
+
+    <hr />
+    <h2>Array from()</h2>
+    <p id="listOfVowels"></p>
+
+    <hr />
+    <h2>Array keys()</h2>
+    <p id="keysOfNumbers"></p>
+
+    <hr />
+    <h2>Array entries()</h2>
+    <p id="entriesOfNumbers"></p>
+
+    <hr />
+    <h2>Array includes()</h2>
+    <p id="includesOfNames"></p>
+
+    <hr />
+    <h2>Array spread(...)</h2>
+    <p id="listOfMonths"></p>
     <script>
       const numbers = [1, 2, 3, 4, 5, 6];
+      const names = ["Jasper", "Ira", "Zoe", "Soraka"];
+      const vowels = "aeiou";
 
       //map() - method creates a new array by performing a function on each array element.
       const multiplied = numbers.map(multiplyAll);
@@ -34,6 +88,64 @@
       //filter() - method creates a new array with array elements that pass a test.
       const filter = numbers.filter(filterNumber);
 
+      //reduce() - method runs a function on each array element to produce (reduce it to) a single value.
+      const reduceNumber = numbers.reduce(getTotalOfNumber, 100); //it can also add initial value
+
+      //reduceRight() - method runs a function on each array element to produce (reduce it to) a single value. It also the same from reduce but it's starts from right to left
+      const reduceRightNumber = numbers.reduce(getTotalOfNumberRight, 42); //it can also add initial value
+
+      //every() - method checks if all array values pass a test.
+      const checkEveryNumber = numbers.every(checkIfGreaterThanTwo);
+
+      //some() - method checks if some array values pass a test.
+      const checkSomeNumber = numbers.some(checkIfLessThanTwo);
+
+      //indexOf() - method searches an array for an element value and returns its position.
+      const indexOfNumber = numbers.indexOf(1, 4); //If there are no found in the array it returns -1
+
+      //lastIndexOf() - is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element.
+      const lastIndexOfNumber = numbers.lastIndexOf(1 + 1); //If there are no found in the array it returns -1
+
+      //find() - method returns the value of the first array element that passes a test function.
+      const findNumberThroughArray = numbers.find(findNumber); //it will return undefine if there is no existing value
+
+      //findIndex() -  method returns the index of the first array element that passes a test function.
+      const findIndexNumberThroughArray = numbers.findIndex(findIndexNumber);
+
+      //Array.from() - method returns an Array object from any object with a length property or any iterable object.
+      const listOfVowels = Array.from(vowels);
+
+      //Array.keys() - method returns an Array Iterator object with the keys of an array.
+      const keysOfNumbers = numbers.keys();
+
+      let keyValue = "";
+
+      for (let x of keysOfNumbers) {
+        keyValue += x + "<br>";
+      }
+
+      //entries() -  method returns an Array Iterator object with key/value pairs
+      const entriesOfNumbers = names.entries();
+
+      let entriesValue = "";
+
+      for (let y of entriesOfNumbers) {
+        entriesValue += y + "<br>";
+      }
+
+      //includes() - ECMAScript 2016 introduced Array.includes() to arrays. This allows us to check if an element is present in an array (including NaN, unlike indexOf).
+      const includesOfNames = names.includes("Jasper");
+
+      //(...) Spread - The ... operator expands an iterable (like an array) into more elements:
+      const q1 = ["Jan", "Feb", "Mar"];
+      const q2 = ["Apr", "May", "Jun"];
+      const q3 = ["Jul", "Aug", "Sep"];
+      const q4 = ["Oct", "Nov", "Dec"];
+
+      const months = [...q1, ...q2, ...q3, ...q4];
+
+      document.getElementById("listOfMonths").innerHTML = months.toString();
+
       let text = "";
 
       //forEach() - method calls a function (a callback function) once for each array element.
@@ -43,6 +155,22 @@
       document.getElementById("multiplyByTwo").innerHTML = multiplied;
       document.getElementById("flatMap").innerHTML = newArray;
       document.getElementById("filterNumbers").innerHTML = filter;
+      document.getElementById("reduceNumbers").innerHTML = reduceNumber;
+      document.getElementById("reduceNumbersRight").innerHTML =
+        reduceRightNumber;
+      document.getElementById("everyNumber").innerHTML = checkEveryNumber;
+      document.getElementById("someNumber").innerHTML = checkSomeNumber;
+      document.getElementById("indexOfNumber").innerHTML = indexOfNumber;
+      document.getElementById("lastIndexOfNumber").innerHTML =
+        lastIndexOfNumber;
+      document.getElementById("findNumber").innerHTML = findNumberThroughArray;
+      document.getElementById("findIndexNumber").innerHTML =
+        findIndexNumberThroughArray;
+      document.getElementById("listOfVowels").innerHTML = listOfVowels;
+      document.getElementById("keysOfNumbers").innerHTML = keyValue;
+      document.getElementById("entriesOfNumbers").innerHTML = entriesValue;
+      document.getElementById("includesOfNames").innerHTML = includesOfNames;
+      document.getElementById("months").innerHTML = listOfMonths;
 
       //   function myFunction(value, array, index) {
       //     text += value + "<br>";
@@ -60,6 +188,30 @@
 
       function filterNumber(value) {
         return value < 3;
+      }
+
+      function getTotalOfNumber(total, value) {
+        return total + value;
+      }
+
+      function getTotalOfNumberRight(total, value) {
+        return total + value;
+      }
+
+      function checkIfGreaterThanTwo(value) {
+        return value > 2;
+      }
+
+      function checkIfLessThanTwo(value) {
+        return value < 2;
+      }
+
+      function findNumber(value) {
+        return value > 100;
+      }
+
+      function findIndexNumber(value) {
+        return value > 5;
       }
     </script>
   </body>
