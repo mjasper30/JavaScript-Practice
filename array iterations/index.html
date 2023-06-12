@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Iterations</title>
+  </head>
+  <body>
+    <h1>Array Iterations</h1>
+
+    <h2>Array forEach()</h2>
+    <p id="array"></p>
+    <hr />
+
+    <h2>Array map()</h2>
+    <p id="multiplyByTwo"></p>
+
+    <hr />
+    <h2>Array flatMap()</h2>
+    <p id="flatMap"></p>
+
+    <hr />
+    <h2>Array filter()</h2>
+    <p id="filterNumbers"></p>
+    <script>
+      const numbers = [1, 2, 3, 4, 5, 6];
+
+      //map() - method creates a new array by performing a function on each array element.
+      const multiplied = numbers.map(multiplyAll);
+
+      //flatMap() - method first maps all elements of an array and then creates a new array by flattening the array.
+      const newArray = numbers.flatMap((x) => x * 2);
+
+      //filter() - method creates a new array with array elements that pass a test.
+      const filter = numbers.filter(filterNumber);
+
+      let text = "";
+
+      //forEach() - method calls a function (a callback function) once for each array element.
+      numbers.forEach(myFunction);
+
+      document.getElementById("array").innerHTML = text;
+      document.getElementById("multiplyByTwo").innerHTML = multiplied;
+      document.getElementById("flatMap").innerHTML = newArray;
+      document.getElementById("filterNumbers").innerHTML = filter;
+
+      //   function myFunction(value, array, index) {
+      //     text += value + "<br>";
+      //   }
+
+      //Above myFunction(value, array, index)... This can also be written below
+      function myFunction(value) {
+        text += value + "<br>";
+      }
+
+      //I used this function in map()
+      function multiplyAll(value) {
+        return value * 2;
+      }
+
+      function filterNumber(value) {
+        return value < 3;
+      }
+    </script>
+  </body>
+</html>
