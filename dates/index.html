@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dates</title>
+  </head>
+  <body>
+    <script>
+      //new Date() - Date objects are created with the new Date() constructor.
+      const d = new Date();
+      const myBirthday = new Date("October 30, 2001");
+      const iraBirthdate = new Date("October 15, 2001");
+
+      //new Date(date string) - creates a date object from a date string:
+      //   const date = new Date("2022-03-25");
+      const date = new Date("October 13, 2014 11:13:00");
+
+      console.log(d); //OUTPUT: Tue Jun 13 2023 20:23:06 GMT+0800 (Singapore Standard Time)
+      console.log(date); //OUTPUT: Fri Mar 25 2022 08:00:00 GMT+0800 (Singapore Standard Time)
+
+      //7 numbers specify
+      //year, month, day, hour, minute, second, and millisecond (in that order):
+      const fullDate = new Date(2018, 11, 24, 10, 33, 30, 0);
+      console.log(fullDate); //OUTPUT: Mon Dec 24 2018 10:33:30 GMT+0800 (Singapore Standard Time)
+
+      //Previous Century format - One and two digit years will be interpreted as 19xx:
+      const dateOfCentury = new Date(99, 9, 30);
+      console.log(dateOfCentury); //OUTPUT: Sat Oct 30 1999 00:00:00 GMT+0800 (Singapore Standard Time)
+
+      //Using toString()
+      console.log(d.toString()); //OUTPUT: Tue Jun 13 2023 20:49:22 GMT+0800 (Singapore Standard Time)
+
+      //Using toDateString() make it more readable
+      console.log(myBirthday.toDateString()); //OUTPUT: Tue Oct 30 2001
+      console.log(iraBirthdate.toDateString()); //OUTPUT: Tue Oct 30 2001
+
+      //Using toUTCString()
+      console.log(d.toUTCString()); //OUTPUT: Tue, 13 Jun 2023 12:49:08 GMT
+      /*
+              Date objects are created with the new Date() constructor.
+
+              There are 9 ways to create a new date object:
+
+              new Date()
+              new Date(date string)
+
+              new Date(year,month)
+              new Date(year,month,day)
+              new Date(year,month,day,hours)
+              new Date(year,month,day,hours,minutes)
+              new Date(year,month,day,hours,minutes,seconds)
+              new Date(year,month,day,hours,minutes,seconds,ms)
+
+              new Date(milliseconds)
+
+              Note
+
+                JavaScript counts months from 0 to 11:
+
+                January = 0.
+                December = 11.
+            */
+    </script>
+  </body>
+</html>
