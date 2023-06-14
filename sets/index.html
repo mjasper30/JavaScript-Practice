@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sets</title>
+  </head>
+  <body>
+    <h1>Sets</h1>
+    <p id="text"></p>
+
+    <hr />
+    <p id="text1"></p>
+    <script>
+      /*
+          A JavaScript Set is a collection of unique values.
+
+          Each value can only occur once in a Set.
+
+          Essential Set Methods
+          new Set()	Creates a new Set
+          add()	    Adds a new element to the Set
+          delete()	Removes an element from a Set
+          has()	    Returns true if a value exists in the Set
+          forEach()	Invokes a callback for each element in the Set
+          values()	Returns an iterator with all the values in a Set
+          size	    Returns the number of elements in a Set
+      */
+
+      //How to create a set
+      const array = new Set(["a", "b", "c"]);
+      array.add("e");
+      array.add("f");
+      array.add("g");
+      array.add("f");
+
+      console.log(array.size); //OUTPUT 3
+
+      const letters = new Set();
+
+      const a = "a";
+      const b = "b";
+      const c = "c";
+
+      letters.add(a);
+      letters.add(b);
+      letters.add(c);
+
+      console.log(letters.size);
+
+      //forEach()
+      let text = "";
+      array.forEach(function (value) {
+        text += value;
+      });
+
+      document.getElementById("text").innerHTML = text;
+
+      //List all Elements
+      let text1 = "";
+      for (const x of array.values()) {
+        text1 += x;
+      }
+
+      document.getElementById("text1").innerHTML = text1;
+    </script>
+  </body>
+</html>
