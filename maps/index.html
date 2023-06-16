@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maps</title>
+  </head>
+  <body>
+    <h1>Maps</h1>
+    <h2>Get all the fruits using new Map()</h2>
+    <p id="fruit"></p>
+    <hr />
+    <h2>Get the name using set() and get()</h2>
+    <p id="name"></p>
+    <hr />
+    <h2>Get size of fruits new Map()</h2>
+    <p id="size"></p>
+    <hr />
+    <h2>deleted item from Map()</h2>
+    <p id="delete"></p>
+    <hr />
+    <h2>Check if true or false in the item using has()</h2>
+    <p id="has"></p>
+    <hr />
+    <h2>Loop inside a Map using forEach()</h2>
+    <p id="forEach"></p>
+    <hr />
+    <h2>Loop inside a Map using for() using all the keys</h2>
+    <p id="entries"></p>
+
+    <script>
+      // Create a Map
+      const fruits = new Map([
+        ["apples", 500],
+        ["bananas", 300],
+        ["oranges", 200],
+      ]);
+
+      //set and get
+      const names = new Map();
+      names.set("zoe", "Jasper");
+      names.set("yuumi", "Ira");
+      names.set("zed", "Mark");
+
+      //delete
+      names.delete("yuumi");
+
+      //forEach
+      let text = "";
+      fruits.forEach(function (value, key) {
+        text += key + " = " + value + "<br>";
+      });
+
+      //entries
+      let text1 = "";
+      for (const x of fruits.entries()) {
+        text1 += x + "<br>";
+      }
+
+      //   Output
+      document.getElementById("fruit").innerHTML = fruits.get("apples");
+      document.getElementById("name").innerHTML = names.get("zoe");
+      document.getElementById("size").innerHTML = fruits.size;
+      document.getElementById("delete").innerHTML = names.get("yuumi");
+      document.getElementById("has").innerHTML = names.has("test");
+      document.getElementById("forEach").innerHTML = text;
+      document.getElementById("entries").innerHTML = text1;
+    </script>
+  </body>
+</html>
