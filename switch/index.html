@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch</title>
+  </head>
+  <body>
+    <script>
+      const day = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ];
+
+      const daySelected = day[0]; //Change this to check the results
+      console.log(daySelected);
+
+      //you can also use daySelected -  inside the switch case
+      //Only one key can switch case can assess
+      switch (new Date().getDay() || daySelected) {
+        case 0:
+        case "Sunday":
+          console.log("Today is Sunday");
+          break;
+
+        case 1:
+        case "Monday":
+          console.log("Today is Monday");
+          break;
+
+        case 2:
+        case "Tuesday":
+          console.log("Today is Tuesday");
+        //   break; //if there is no break it will continue to the next case
+
+        case 3:
+        case "Wednesday":
+          console.log("Today is Wednesday");
+          break;
+
+        case 4:
+        case "Thursday":
+          console.log("Today is Thursday");
+          break;
+
+        case 5:
+        case "Friday":
+          console.log("Today is Friday");
+          break;
+
+        case 6:
+        case "Saturday":
+          console.log("Today is Saturday");
+          break;
+
+        default:
+          console.log("This is not belong to options of the day");
+          break;
+      }
+      console.log(new Date());
+    </script>
+  </body>
+</html>
