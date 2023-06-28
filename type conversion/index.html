@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type Conversion</title>
+  </head>
+  <body>
+    <h1>Type Conversion</h1>
+    <p id="demo"></p>
+
+    <script>
+      //Converting String to Nuimber
+      document.getElementById("demo").innerHTML = Number("1.25") + 2.4;
+      const pi = Number(Math.PI);
+      console.log(pi);
+
+      //OUTPUT: 0
+      console.log(Number(" "));
+      console.log(Number(""));
+      //OUTPUT: NaN or Not a Number
+      console.log(Number("Jasper"));
+      console.log(Number("1 2 3"));
+
+      //Converting Strings to number, float, and integer
+      console.log(Number("4")); //4
+      console.log(parseFloat("4.5232")); //4.5232
+      console.log(parseInt("4.5232")); //4
+
+      //Unary Operator - The unary + operator can be used to convert a variable to a number:
+      let x = "6";
+      let y = +x;
+      console.log(typeof y); //number value is 6
+
+      let a = "Jasper";
+      let b = +a;
+      console.log(typeof b); //number but (NaN)
+
+      //Converting Numbers to Strings
+      console.log(String(x)); //6
+      console.log(String(123)); //123
+      console.log(String(123 + 123)); //246
+
+      //Converting Dates to Number
+      let d = new Date();
+      console.log(Number(d.getTime())); //does the same
+      console.log(Number(d));
+
+      //Converting Dates to String
+      console.log(String(d));
+
+      //Converting Boolean to Strings
+      console.log(String(false)); //false
+      console.log(String(true)); //true
+      //same as below
+      console.log(false.toString()); //false
+      console.log(true.toString()); //true
+
+      //Converting Boolean to Numbers
+      console.log(Number(true)); //1
+      console.log(Number(false)); //0
+
+      //Automatic Type Converstion
+      // 5 + null    // returns 5         because null is converted to 0
+      // "5" + null  // returns "5null"   because null is converted to "null"
+      // "5" + 2     // returns "52"      because 2 is converted to "2"
+      // "5" - 2     // returns 3         because "5" is converted to 5
+      // "5" * "2"   // returns 10        because "5" and "2" are converted to 5 and 2
+    </script>
+  </body>
+</html>
