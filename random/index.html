@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random</title>
+  </head>
+  <body>
+    <button
+      onclick="document.getElementById('demo').innerHTML = getRndInteger(0,10)"
+    >
+      Click Me
+    </button>
+
+    <p id="demo"></p>
+    <script>
+      //0.4860873065577982 random numbers from 0.1... to 0.9...
+      console.log(Math.random());
+      // Returns a random integer from 0 to 9:
+      console.log(Math.floor(Math.random() * 10));
+      // Returns a random integer from 0 to 10:
+      console.log(Math.floor(Math.random() * 11));
+      // Returns a random integer from 0 to 99:
+      console.log(Math.floor(Math.random() * 100));
+      // Returns a random integer from 1 to 10:
+      console.log(Math.floor(Math.random() * 10) + 1);
+
+      output(Math.floor(Math.random() * 100) + 1);
+
+      function output($random) {
+        console.log($random);
+      }
+
+      function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+    </script>
+  </body>
+</html>
